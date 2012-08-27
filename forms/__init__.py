@@ -105,6 +105,15 @@ class Form(object):
 
         return result
 
+    def error(self, field_name, message = 'Unknown error'):
+        for field in self.fields:
+            if field.name == field_name:
+                key = field.name if not field.common_error else 'common'
+                self.errors[key] = {'message' : message}
+                break
+
+        self.valid = False
+
     def validate(self):
         self.errors = {}
         for field in self.fields:

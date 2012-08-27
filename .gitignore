@@ -2,3 +2,7 @@
 *.pyc
 /build/
 /dist/
+
+*.xml
+
+.idea/form-validation.iml
